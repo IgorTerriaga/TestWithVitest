@@ -17,7 +17,6 @@ test("create and Appointment", () => {
 test("cannot create and appointment with end date before start date", () => {
   const startAt = new Date();
   const endsAt = new Date();
-
   endsAt.setDate(endsAt.getDate() - 1);
   expect(() => {
     return new Appointment({
