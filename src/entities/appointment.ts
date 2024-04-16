@@ -20,6 +20,9 @@ export class Appointment {
 
   constructor(appointment: IAppointment) {
     const { startAt, endsAt } = appointment;
+    if (startAt <= new Date()){
+      throw new Error("Invalid Date");
+    }
     if (endsAt <= startAt) {
       throw new Error("Invalid end Date");
     }
